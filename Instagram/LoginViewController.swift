@@ -11,9 +11,7 @@ import Parse
 
 class LoginViewController: UIViewController {
     
-    
     @IBOutlet weak var usernameField: UITextField!
-    
     @IBOutlet weak var passwordField: UITextField!
     
 
@@ -28,27 +26,43 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func onSignIn(_ sender: AnyObject) {
-    }
-    
     @IBAction func onSignUp(_ sender: AnyObject) {
+
+       let newUser = PFUser()
         
-        let newUser = PFUser()
-        
-        // set user properties
+       // set user properties
         newUser.username = usernameField.text
         newUser.password = passwordField.text
-        
-        // call sign up function on the object
+
         newUser.signUpInBackground { (success: Bool, error: Error?) in
             if let error = error {
                 print(error.localizedDescription)
             } else {
                 print("User Registered successfully")
                 // manually segue to logged in view
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
+            }
+        }
+
+    }
+    
+    @IBAction func onSignIn(_ sender: AnyObject) {
+            PFUser.logInWithUsername(inBackground: usernameField.text!, password: passwordField.text!) { (user: PFUser?, error: Error?) in
+            if let error = error {
+                print("User log in failed: \(error.localizedDescription)")
+                
+            } else {
+                print("User logged in successfully")
+                // manually segue to logged in view
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
+                
             }
         }
     }
+   
+    
+    
+
     
     
 

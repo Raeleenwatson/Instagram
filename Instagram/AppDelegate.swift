@@ -15,13 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    private func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         Parse.initialize(
             with: ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) -> Void in
                 configuration.applicationId = "Instagram"
                 configuration.clientKey = "aukfhdsfsd763yu479yhr"  // set to nil assuming you have not set clientKey
-                configuration.server = " https://mysterious-river-67703.herokuapp.com/parse"
+                configuration.server = "https://mysterious-river-67703.herokuapp.com/parse"
             })
         )
         
