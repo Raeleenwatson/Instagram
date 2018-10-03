@@ -10,6 +10,7 @@ import UIKit
 import Parse
 
 class DetailViewController: UIViewController {
+    
     var post: PFObject!
     
     @IBOutlet weak var postImageView: UIImageView!

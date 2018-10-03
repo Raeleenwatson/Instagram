@@ -14,7 +14,6 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     var posts : [Post] = []
     
-    @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var composeButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
@@ -53,18 +52,13 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         refreshControl.endRefreshing()
     }
     
-    
-    @IBAction func onLogout(_ sender: Any) {
-        PFUser.logOutInBackground { (error: Error?) in
-            if let error = error {
-                print("User logout failed: \(error.localizedDescription)")
-            } else {
-                print("User logout successful")
-                //need to segue back to login screen
-                self.performSegue(withIdentifier: "logoutSegue", sender: nil)
-            }
-        }
+    @IBAction func logoutAction(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name("didLogout"), object: nil)
+        self.performSegue(withIdentifier: "logoutNow", sender: nil)
     }
+    
+    
+
     
     @IBAction func onCompose(_ sender: Any) {
         self.performSegue(withIdentifier: "composeSegue", sender: nil)

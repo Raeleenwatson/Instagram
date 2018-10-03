@@ -17,9 +17,11 @@ class PhotoMapViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var captionField: UITextField!
     
+    let vc = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        vc.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -34,7 +36,6 @@ class PhotoMapViewController: UIViewController, UIImagePickerControllerDelegate,
         imageView.image = originalImage
         let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
         
-        // Do something with the images (based on your use case)
         imageView.image = editedImage
         imageView.contentMode = .scaleAspectFit
         // Dismiss UIImagePickerController to go back to your original view controller

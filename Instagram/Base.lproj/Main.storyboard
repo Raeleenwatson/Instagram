@@ -13,7 +13,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginID" id="BYZ-38-t0r" customClass="LoginViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -161,7 +161,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Logout"/>
                                 <connections>
-                                    <action selector="onLogout:" destination="Y53-U9-ONp" eventType="touchUpInside" id="b5m-ae-29o"/>
+                                    <action selector="logoutAction:" destination="Y53-U9-ONp" eventType="touchUpInside" id="t7i-pY-71r"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="logoutNow" id="Ct6-M8-wuC"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="481" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NfQ-ka-nAe">
@@ -217,7 +218,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="composeButton" destination="Quq-MA-AMA" id="vjd-dN-QY6"/>
-                        <outlet property="logoutButton" destination="ufp-aP-Z02" id="jGy-9p-UZB"/>
                         <outlet property="tableView" destination="NfQ-ka-nAe" id="Bx0-rh-cFl"/>
                         <segue destination="VqU-Dw-SwB" kind="presentation" identifier="composeSegue" id="orl-DB-37B"/>
                     </connections>
@@ -286,7 +286,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="orl-DB-37B"/>
-        <segue reference="odX-Rc-Ijn"/>
+        <segue reference="OWL-VE-4Z2"/>
     </inferredMetricsTieBreakers>
 </document>
