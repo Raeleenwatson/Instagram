@@ -44,11 +44,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // Hides the RefreshControl
     @objc func refreshControlAction(_ refreshControl: UIRefreshControl) {
         
-        // ... Create the URLRequest `myRequest` ...
-        
-        // Configure session so that completion handler is executed on main UI thread
-        //let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
-        //let task: URLSessionDataTask = session.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
+      
         fetchPosts()
         // ... Use the new data to update the data source ...
         // Reload the tableView now that there is new data

@@ -220,7 +220,6 @@
                         <outlet property="logoutButton" destination="ufp-aP-Z02" id="jGy-9p-UZB"/>
                         <outlet property="tableView" destination="NfQ-ka-nAe" id="Bx0-rh-cFl"/>
                         <segue destination="VqU-Dw-SwB" kind="presentation" identifier="composeSegue" id="orl-DB-37B"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="logoutSegue" id="nLD-0z-4qI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KkN-4r-mZh" userLabel="First Responder" sceneMemberID="firstResponder"/>
